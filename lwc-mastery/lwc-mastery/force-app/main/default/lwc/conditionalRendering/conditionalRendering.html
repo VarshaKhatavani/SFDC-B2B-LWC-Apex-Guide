@@ -1,0 +1,17 @@
+<template>
+    
+     <lightning-card  title="Use of Directives" class="slds-var-m-around_medium">
+            <lightning-button class="slds-var-m-around_medium"  label="Show Data" title="Show Data"  onclick={handleClick}>
+            </lightning-button>
+            <p slot="footer" lwc:if={isVisible}> Hello, It's true  </p>
+            <p slot="footer" lwc:else >You can't see the data. Please click the button</p>
+
+            <lightning-input class="slds-var-m-around_medium" type="text" label="Type hello to see the data" onkeyup={changeHandler}>
+            </lightning-input>
+            <template if:true={helloMethod}>
+                <div class="slds-var-m-around_medium" >Hurray!! You have typed correctly</div>
+            </template>
+
+        </lightning-card>
+
+</template>
