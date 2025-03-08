@@ -1,0 +1,15 @@
+<template>
+
+    <lightning-card title="QuerySelector Demo">
+            <div class="slds-var-m-around_medium">
+                    <h1> Query Selector Demo </h1>    
+                    <template for:each={users} for:item="user">
+                         <div class="name" key={user}>{user}</div>
+                    </template>
+                    <!-- LWC doesn't recommend to use innerHTML -  -->
+                    <div class="child" lwc:dom="manual"></div>
+                    <button onclick={fetchDetailHandler}>Fetch details</button>
+            </div>
+    </lightning-card>
+    
+</template>
