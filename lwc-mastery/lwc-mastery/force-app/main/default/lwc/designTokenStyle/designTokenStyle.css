@@ -1,0 +1,9 @@
+div{
+    background-color: var(--lwc-colorBackgroundHighlight);
+    padding: 10px;
+    border-radius: 5px;
+    font: var(--lwc-fontWeightBold);
+    color: var(--lwc-brandAccessibleActive);
+}
+
+/* design token format => lightning */
