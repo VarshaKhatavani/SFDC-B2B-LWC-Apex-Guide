@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title="Lifecycle hook parent card - Unmounting Demo" >
+
+        <div class="slds-var-m-around_medium">
+            <template if:true={isChildVisible}>
+
+                <lightning-button
+                variant="brand"
+                label="Remove Child" 
+                title="Remove Child" 
+                onclick={handleClick} 
+                class="slds-m-left_x-small"></lightning-button>
+
+                <p class="slds-var-m-around_medium"> use of disconnectedCallback </p>
+                <c-life-cycle-child-unmounting></c-life-cycle-child-unmounting> 
+           </template>
+
+            <template if:false={isChildVisible}>
+                <lightning-button
+                    variant="brand"
+                    label="Show Child" 
+                    title="Show Child" 
+                    onclick={handleClick} 
+                    class="slds-m-left_x-small">
+                </lightning-button>
+            </template>
+           
+        </div>
+
+    </lightning-card>
+</template>
