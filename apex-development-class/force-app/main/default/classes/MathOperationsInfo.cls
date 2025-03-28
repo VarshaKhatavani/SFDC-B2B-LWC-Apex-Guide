@@ -1,9 +1,12 @@
+// Write an Apex Program, to define the Required Parameterized Procedures / functions to perform the Mathematical Calculations.
+
 public with sharing class MathOperationsInfo {
 
     public void Addition(Integer firstNo, Integer secondNo){
         System.debug('Addition Result is....using procedure'+(firstNo+secondNo));
     }
 
+    // function
     public Integer AdditionFunc(Integer firstNo, Integer secondNo){
         return firstNo + secondNo;
     }
