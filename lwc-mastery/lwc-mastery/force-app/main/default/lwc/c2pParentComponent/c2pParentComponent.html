@@ -3,9 +3,9 @@
         <div class="slds-var-m-around-medium">
             <lightning-button class="slds-var-m-around-medium" label="Show Modal" onclick={clickHandler}>
             </lightning-button>
-
-            <template if:true={showModal}>
-                <c-c2p-modal-component onclose={closeHandler}></c-c2p-modal-component>
+            <h1>{msg}</h1>
+            <template if:true={showModal} >
+                <c-c2p-modal-component onclose={closeHandler} ></c-c2p-modal-component>
             </template>        
          
         </div>
