@@ -1,0 +1,57 @@
+<apex:page lightningStylesheets="true">
+    <apex:slds/>
+    <!-- Begin Default Content REMOVE THIS -->
+    <div class="slds-scope">
+        <div class="slds-p-around_small">
+            <label>Enter Publish Message</label>
+            <input type="text" class="slds-input" id="messageField"/>
+            <div class="slds-p-top_small slds-p-bottom_small">
+                <button class="slds-button slds-button_neutral" onclick="publishHandler()">Publish</button>
+                <button class="slds-button slds-button_neutral" onclick="subscribeHandler()">Subscribe</button>
+                <button class="slds-button slds-button_neutral" onclick="unsubscribeHandler()">Unsubscribe</button>
+            </div>
+
+            <p>message Recieved</p>
+            <div id="recievedMessage"></div>
+
+        </div>
+    </div>
+    <!-- End Default Content REMOVE THIS -->
+    <script>
+
+        let SAMPLEMC = "{!$MessageChannel.SampleMessageChannel__c}"
+        let subscriptionToMC
+        console.log('sforce.one: ', sforce.one);
+
+        function publishHandler(){
+            let data = document.getElementById("messageField").value
+            const message = {
+                lmsData : {
+                    value : data
+                }
+            }
+            sforce.one.publish(SAMPLEMC, message)
+        }
+
+        function subscribeHandler(){
+            if(!subscriptionToMC){
+                subscriptionToMC = sforce.one.subscribe(SAMPLEMC, msgHandler, {scope : "APPLICATION"})
+                console.log(subscriptionToMC);
+            }
+        }
+
+        function unsubscribeHandler(){
+            if(subscriptionToMC){
+                sforce.one.unsubscribe(subscriptionToMC)
+                subscriptionToMC=null
+            }
+        }
+
+        function msgHandler(message){
+            console.log('msgHandler called...');
+            let recievedMessage= document.getElementById("recievedMessage")
+            recievedMessage.innerHTML = message && message.lmsData ? message.lmsData.value:"No Data Send" 
+        }
+
+    </script>
+</apex:page>

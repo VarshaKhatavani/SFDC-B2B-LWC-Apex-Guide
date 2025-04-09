@@ -1,6 +1,6 @@
 import { LightningElement, wire } from 'lwc';
 import MSGCHANNEL from '@salesforce/messageChannel/SampleMessageChannel__c';
-import {MessageContext, subscribe, APPLICATION_SCOPE} from 'lightning/messageService';
+import {MessageContext, subscribe, APPLICATION_SCOPE, unsubscribe} from 'lightning/messageService';
 
 export default class LmsComponentX extends LightningElement {
     recievedMessage;
@@ -19,6 +19,11 @@ export default class LmsComponentX extends LightningElement {
 
     handleMessage(message){
         this.recievedMessage = message.lmsData.value ? message.lmsData.value : 'No Message Published';
+    }
+
+    unsubscribeMessage(){
+        unsubscribe(this.subscription); 
+        this.subscription = null ; 
     }
 
 }
