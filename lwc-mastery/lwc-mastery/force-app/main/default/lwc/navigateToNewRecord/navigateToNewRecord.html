@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Object Page"></lightning-card>
+    <lightning-card title="Navigate to New Record - Contact">
+        <lightning-button variant="brand" label="New Record" 
+            onclick={navigateToNewRecord} ></lightning-button>    
+    </lightning-card>
+
+    <lightning-card title="Navigate to New Record with default Values" class="slds-m-top_medium">
+        <lightning-button variant="brand" label="New Record with default values" 
+            onclick={navigateToNewRecordWithDefault} ></lightning-button>   
+    </lightning-card>
+
+    <lightning-card title="Navigate to List View">
+        <lightning-button variant="brand" label="Navigate To list View"
+        onclick={navigateToListView}
+        ></lightning-button>
+    </lightning-card>
+
+    <lightning-card title="Navigate to Files">
+        <lightning-button variant="brand" label="Navigate To Files" onclick={navigateToFiles}></lightning-button>
+    </lightning-card>
+</template>
