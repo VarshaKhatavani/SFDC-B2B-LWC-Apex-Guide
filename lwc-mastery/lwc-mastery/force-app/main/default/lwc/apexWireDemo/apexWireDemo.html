@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="Apex Wire To Property Demo">
+        <div class="slds-p-around_medium">
+            <template if:true={acctList.data}>
+                <template for:each={acctList.data} for:item="acct">
+                    <div class="slds-box slds-box_xx-small" key={acct.id}>
+                        <p>{acct.Name}</p>
+                        <p>{acct.Type}</p>
+                        <p>{acct.Industry}</p>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Apex Wire To Function Demo">
+        <div class="slds-p-around_medium">
+            <template if:true={accountsList}>
+                <template for:each={accountsList} for:item="accts">
+                    <div class="slds-box slds-box_xx-small" key={accts.id}>
+                        <p>{accts.Name}</p>
+                        <p>{accts.newType}</p>
+                        <p>{accts.Industry}</p>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>
