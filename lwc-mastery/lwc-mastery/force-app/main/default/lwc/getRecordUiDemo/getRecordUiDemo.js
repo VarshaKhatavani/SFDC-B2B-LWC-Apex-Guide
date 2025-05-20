@@ -13,7 +13,7 @@ export default class GetRecordUiDemo extends LightningElement {
                 return{
                     ...item,
                     // data.records[001WU00000tKpI1YAK].fields[AccountNumber].value
-                    value : data.records[this.recordId].fields[item.fieldName].value
+                    value : data?.records[this.recordId]?.fields[item.fieldName]?.value
                 }
             })
             console.log('>>>',this.formFileds);
