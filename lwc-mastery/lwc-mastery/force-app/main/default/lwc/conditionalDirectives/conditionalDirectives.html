@@ -1,0 +1,59 @@
+<template>    
+    <!-- <lightning-card title="if:true and if:false Basic Demo">
+        <div class="slds-var-p-around_medium">
+            <lightning-button label={getLabel}
+                    onclick={showTextHandler} ></lightning-button>
+            <template if:true={showText}>
+                Hello Friends
+            </template>
+            <template if:false={showText}>
+                **************
+            </template>
+        </div>
+    </lightning-card> -->
+
+
+    <lightning-card title="lwc:if and lwc:else Basic Demo">
+        <div class="slds-var-p-around_medium">
+            <lightning-button label={getLabel}
+                    onclick={showTextHandler} ></lightning-button>
+            <template lwc:if={showText}>
+                Hello Friends
+            </template>
+            <template lwc:else>
+                **************
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="if:true and if:false Getter Demo">
+        <div class="slds-var-p-around_medium">
+            <lightning-input label="Country Name" 
+                    value={country}
+                    onchange={changeHandler}> </lightning-input>
+            <template if:true={isCountryIndia}>
+                Yes, you are in India
+            </template>
+            <template if:false={isCountryIndia}>
+                No, you are not in india
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="lwc:if and lwc:else Getter Demo">
+        <div class="slds-var-p-around_medium">
+            <lightning-input label="Country Name" 
+                    value={newCountry}
+                    onchange={newChangeHandler}> </lightning-input>
+            <template lwc:if={isCountrySweden}>
+                Yes, you are in Sweden
+            </template>
+            <template lwc:elseif={isCountryIndia}>
+                No, you are in india
+            </template>
+            <template lwc:else>
+                No, you are in Canada
+            </template>
+        </div>
+    </lightning-card>
+</template>
