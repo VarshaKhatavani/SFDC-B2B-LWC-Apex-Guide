@@ -1,0 +1,10 @@
+List<Contact> contacts = [SELECT Account.Name, Account.Rating, Name, Department, Title, ( Select CaseNumber,Subject FROM Cases ) FROM Contact ORDER BY Name]; 
+System.debug(contacts);
+
+for(Contact con: contacts){
+    System.debug('Contact Name:' +con.Name+', Contact Department : '+con.Department+ ', Contact Title : '+ con.Title + 'Account Name: ' + con.Account.Name+ 'Account Rating: ' +con.Account.Rating);
+    // iterate over the child records (Cases)
+    for(Case caseObj : con.Cases){
+        System.debug('Case Number:'+ caseObj.CaseNumber+ ', Case Subject :'+ caseObj.Subject);
+    }
+}
