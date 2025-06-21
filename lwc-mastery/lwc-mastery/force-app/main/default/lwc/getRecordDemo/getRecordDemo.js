@@ -18,8 +18,8 @@ export default class GetRecordDemo extends LightningElement {
             console.log('--- getRecordDemo.js ---');  
             this.AnnualRevenue = data.fields.AnnualRevenue.displayValue
             this.owner = data.fields.Owner.displayValue  
-            this.name = data.fields.Name.displayValue ?  data.fields.Name.displayValue:
-            data.fields.Name.value
+            this.name = data.fields.Name?.displayValue ?  data.fields.Name?.displayValue :
+            data.fields.Name?.value
             this.log('[GetRecordDemo]', data);
         }
     }
